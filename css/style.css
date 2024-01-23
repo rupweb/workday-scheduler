@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -69,4 +69,99 @@ header {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+/* Header and footer styling */
+
+.header-image img {
+  display: block; /* Make the image a block element for center alignment */
+  margin: 0 auto; /* Center-align the image horizontally */
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+}
+
+.header-class img {
+  display: block; /* Make the image a block element for center alignment */
+  margin: 0 auto; /* Center-align the image horizontally */
+  height: 40px;
+  width: 70px;
+}
+
+header.header-class {
+  background-color: #2163ad;
+  padding: 5px; /* Add padding for spacing */
+  color: lightblue;
+  border-radius: 20px;
+  background-image: url("../images/planner.jpg");
+  background-size: cover; /* Cover the entire header area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+footer.footer-class {
+  display: flex;
+  justify-content: space-between; /* Distributes space between elements */
+  align-items: center; /* Aligns items vertically */
+  background-color: #2163ad;
+  padding: 5px; /* Add padding for spacing */
+  color: lightblue;
+  border-radius: 20px;
+  background-image: url("../images/planner2.jpg");
+  background-size: cover; /* Cover the entire header area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+#backButton {
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.left-text,
+.right-text {
+  padding: 10px 20px;
+}
+
+/* Main content styling */
+
+.main-content {
+  flex: 1;
+}
+
+.extra-padding-bottom {
+  padding-bottom: 20px;
+}
+
+.extra-padding-top {
+  padding-top: 20px;
+}
+
+.img-center {
+  text-align: center; /* Center-align the text horizontally */
+  padding-top: 20px;
+}
+
+.text-center {
+  text-align: center; /* Center-align the text horizontally */
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Content Container */
+.content-container {
+  padding: 15px;
+  max-width: 80%; /* Adjust as needed */
+  margin: 0 auto; /* Centering the container */
+}
+
+.display-3,
+.lead,
+.h2-dark {
+  color: darkblue;
+  text-shadow: 3px 3px 3px white;
 }
