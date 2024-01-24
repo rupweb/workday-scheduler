@@ -62,22 +62,22 @@
       
           <!-- Free Text Column (Sortable) -->
           <ul id="sortable">
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
-            <li><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
+            <li><span class="drag-handle">☰</span><input type="text" class="free-text" /></li>
           </ul>
       
           <!-- Lock Icon Column -->
@@ -125,13 +125,10 @@
 
     <script>
       $(document).ready(function() {
-        $("#sortable").sortable({});
-
-        // Allow sorting from the free-text input fields
-        $("#sortable").on("mousedown", ".free-text", function(e) {
-          // This line checks if the user is trying to type
-          if (e.target === this) {
-            $(this).closest("li").trigger("mousedown", e);
+        $("#sortable").sortable({
+          handle: ".drag-handle", // Specific handle
+          stop: function(event, ui) { // After sorting
+            updateListItemStyles();
           }
         });
 
@@ -139,7 +136,7 @@
       });
     </script>
 
-    <script type="module" src="./js/workday.js"></script>
+    <script src="./js/workday.js"></script>
     <script src="js/header-and-footer.js"></script>
     <!-- Script to load header and footer -->
   </body>

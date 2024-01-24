@@ -167,17 +167,6 @@ h6 {
   font-style: italic;
 }
 
-#sortable li {
-  display: flex;
-  align-items: center; /* Center vertical alignment */
-  justify-content: flex-start;
-  margin: 3px 0; /* Consistent vertical margin */
-  padding: 0.4em 1.5em; /* Combined padding shorthand */
-  font-size: 1em; /* Adjusted for consistency */
-  height: 50px; /* Set fixed height */
-  line-height: 50px; /* Ensure vertically centered text */
-}
-
 .free-text {
   flex-grow: 1; /* Allow input to fill the space */
   border: 1px solid #63aa6f;
@@ -200,10 +189,14 @@ h6 {
 .time-label-column li,
 #sortable li,
 .lock-icon-column li {
+  margin: 3px 0; /* Consistent vertical margin */
+  padding: 0.4em 1.5em; /* Combined padding shorthand */
+  font-size: 1em; /* Adjusted for consistency */
   height: 50px; /* Ensure all list items have the same height */
+  line-height: 50px; /* Ensure vertically centered text */
   display: flex; /* Use flexbox for vertical center alignment */
   align-items: center; /* Center items vertically within the li */
-  justify-content: center; /* Center content horizontally */
+  justify-content: flex-start; /* Center content horizontally */
 }
 
 .time-label-column li {
@@ -214,4 +207,9 @@ h6 {
 .lock-icon-column li {
   justify-content: flex-start; /* Aligns content to the left */
   text-align: left; /* Ensures the icon within the list item is left-aligned */
+}
+
+.drag-handle {
+  cursor: move; /* Change cursor to indicate movability */
+  margin-right: 5px; /* Spacing between handle and input */
 }
