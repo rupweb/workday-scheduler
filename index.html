@@ -32,11 +32,10 @@
     <main class="content-container">
       <div id="header"></div>
 
-      <h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias cumque
-        consequatur sint reprehenderit nam, error ut at corporis enim harum.
+      <h1 class="text-center">
+        You can write a note for each hour of the day.
       </h1>
-      <h2>What are you most excited to learn more about?</h2>
+      <p class="text-center">Click on the ☰ icon to resort the notes</p>
       <div class="text-left extra-padding-top extra-padding-bottom">
         <div class="column-container">
       
@@ -104,9 +103,6 @@
       </div>
       
       <h1>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab voluptatem
-        necessitatibus accusantium atque ipsam minus delectus enim, doloribus
-        iusto praesentium.
       </h1>
 
       <div class="container">
@@ -125,18 +121,25 @@
 
     <script>
       $(document).ready(function() {
+        loadFreeTextFromLocalStorage();
+
         $("#sortable").sortable({
           handle: ".drag-handle", // Specific handle
           stop: function(event, ui) { // After sorting
+            saveFreeTextToLocalStorage();
             updateListItemStyles();
           }
         });
 
         $("#sortable").disableSelection();
+
+        // Bind the save function to input changes
+        $('.free-text').on('change', saveFreeTextToLocalStorage);
       });
     </script>
 
     <script src="./js/workday.js"></script>
+    <script src="./js/storage.js"></script>
     <script src="js/header-and-footer.js"></script>
     <!-- Script to load header and footer -->
   </body>
