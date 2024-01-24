@@ -20,7 +20,11 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/workday-scheduler/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,10 +32,37 @@
     <main class="content-container">
       <div id="header"></div>
 
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias cumque consequatur sint reprehenderit nam, error ut at corporis enim harum.
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias cumque
+        consequatur sint reprehenderit nam, error ut at corporis enim harum.
       </h1>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab voluptatem necessitatibus accusantium atque ipsam minus delectus enim, doloribus iusto praesentium.</h1>
+      <h2>What are you most excited to learn more about?</h2>
+      <div class="text-left extra-padding-top extra-padding-bottom">
+        <ul id="sortable">
+          <!-- Ask the class for skills and use them to populate this list -->
+          <li class="ui-state-default text-left">6am</li>
+          <li class="ui-state-default text-left">7am</li>
+          <li class="ui-state-default text-left">8am</li>
+          <li class="ui-state-default text-left">9am</li>
+          <li class="ui-state-default text-left">10am</li>
+          <li class="ui-state-default text-left">11am</li>
+          <li class="ui-state-default text-left">12 midday</li>
+          <li class="ui-state-default text-left">1pm</li>
+          <li class="ui-state-default text-left">2pm</li>
+          <li class="ui-state-default text-left">3pm</li>
+          <li class="ui-state-default text-left">4pm</li>
+          <li class="ui-state-default text-left">5pm</li>
+          <li class="ui-state-default text-left">6pm</li>
+          <li class="ui-state-default text-left">7pm</li>
+          <li class="ui-state-default text-left">8pm</li>
+          <li class="ui-state-default text-left">9pm</li>
+        </ul>
+      </div>
+      <h1>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab voluptatem
+        necessitatibus accusantium atque ipsam minus delectus enim, doloribus
+        iusto praesentium.
+      </h1>
 
       <div class="container">
         <!-- Timeblocks go here -->
@@ -44,6 +75,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $("#sortable").sortable();
+      });
+    </script>
+
+    <script type="module" src="./js/workday.js"></script>
     <script src="js/header-and-footer.js"></script>
     <!-- Script to load header and footer -->
   </body>
