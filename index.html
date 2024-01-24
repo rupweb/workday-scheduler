@@ -38,26 +38,71 @@
       </h1>
       <h2>What are you most excited to learn more about?</h2>
       <div class="text-left extra-padding-top extra-padding-bottom">
-        <ul id="sortable">
-          <!-- Ask the class for skills and use them to populate this list -->
-          <li class="ui-state-default text-left">6am</li>
-          <li class="ui-state-default text-left">7am</li>
-          <li class="ui-state-default text-left">8am</li>
-          <li class="ui-state-default text-left">9am</li>
-          <li class="ui-state-default text-left">10am</li>
-          <li class="ui-state-default text-left">11am</li>
-          <li class="ui-state-default text-left">12 midday</li>
-          <li class="ui-state-default text-left">1pm</li>
-          <li class="ui-state-default text-left">2pm</li>
-          <li class="ui-state-default text-left">3pm</li>
-          <li class="ui-state-default text-left">4pm</li>
-          <li class="ui-state-default text-left">5pm</li>
-          <li class="ui-state-default text-left">6pm</li>
-          <li class="ui-state-default text-left">7pm</li>
-          <li class="ui-state-default text-left">8pm</li>
-          <li class="ui-state-default text-left">9pm</li>
-        </ul>
+        <div class="column-container">
+      
+          <!-- Time Label Column -->
+          <ul class="time-label-column">
+            <li>6am</li>
+            <li>7am</li>
+            <li>8am</li>
+            <li>9am</li>
+            <li>10am</li>
+            <li>11am</li>
+            <li>noon</li>
+            <li>1pm</li>
+            <li>2pm</li>
+            <li>3pm</li>
+            <li>4pm</li>
+            <li>5pm</li>
+            <li>6pm</li>
+            <li>7pm</li>
+            <li>8pm</li>
+            <li>9pm</li>
+          </ul>
+      
+          <!-- Free Text Column (Sortable) -->
+          <ul id="sortable">
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+            <li><input type="text" class="free-text" /></li>
+          </ul>
+      
+          <!-- Lock Icon Column -->
+          <ul class="lock-icon-column">
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+            <li>🔒</li>
+          </ul>
+      
+        </div>
       </div>
+      
       <h1>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab voluptatem
         necessitatibus accusantium atque ipsam minus delectus enim, doloribus
@@ -77,9 +122,20 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script>
-      $(function () {
-        $("#sortable").sortable();
+      $(document).ready(function() {
+        $("#sortable").sortable({});
+
+        // Allow sorting from the free-text input fields
+        $("#sortable").on("mousedown", ".free-text", function(e) {
+          // This line checks if the user is trying to type
+          if (e.target === this) {
+            $(this).closest("li").trigger("mousedown", e);
+          }
+        });
+
+        $("#sortable").disableSelection();
       });
     </script>
 

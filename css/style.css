@@ -134,7 +134,7 @@ textarea {
 .past,
 .present,
 .future {
-  color: white;
+  color: black;
 }
 
 .past {
@@ -142,7 +142,7 @@ textarea {
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: goldenrod;
 }
 
 .future {
@@ -167,41 +167,51 @@ h6 {
   font-style: italic;
 }
 
-ul {
-  display: inline-block;
-}
-
-#sortable {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 40%;
-}
-
 #sortable li {
   display: flex;
-  align-items: left;
+  align-items: center; /* Center vertical alignment */
   justify-content: flex-start;
-  margin: 0 3px 3px 3px;
-  padding: 0.4em;
-  padding-left: 1.5em;
-  font-size: 1.5em;
-  height: 50px;
-  line-height: calc(50px - 1.8em);
-}
-
-.time-label {
-  flex-basis: 15%;
-  text-align: left;
+  margin: 3px 0; /* Consistent vertical margin */
+  padding: 0.4em 1.5em; /* Combined padding shorthand */
+  font-size: 1em; /* Adjusted for consistency */
+  height: 50px; /* Set fixed height */
+  line-height: 50px; /* Ensure vertically centered text */
 }
 
 .free-text {
-  flex-basis: 70%;
-  border: 1px solid #ccc;
-  padding: 5px;
+  flex-grow: 1; /* Allow input to fill the space */
+  border: 1px solid #63aa6f;
+  cursor: move; /* Indicates that the item can be moved */
 }
 
-.lock-icon {
-  flex-basis: 15%;
-  text-align: right;
+.column-container {
+  display: flex;
+}
+
+.time-label-column,
+.lock-icon-column,
+#sortable {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 33.33%; /* Each column takes up one-third of the container */
+}
+
+.time-label-column li,
+#sortable li,
+.lock-icon-column li {
+  height: 50px; /* Ensure all list items have the same height */
+  display: flex; /* Use flexbox for vertical center alignment */
+  align-items: center; /* Center items vertically within the li */
+  justify-content: center; /* Center content horizontally */
+}
+
+.time-label-column li {
+  justify-content: flex-end; /* Aligns content to the right */
+  text-align: right; /* Ensures the text within the list item is right-aligned */
+}
+
+.lock-icon-column li {
+  justify-content: flex-start; /* Aligns content to the left */
+  text-align: left; /* Ensures the icon within the list item is left-aligned */
 }
